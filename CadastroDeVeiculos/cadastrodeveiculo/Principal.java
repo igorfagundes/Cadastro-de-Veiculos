@@ -6,38 +6,65 @@ public class Principal{
     static ArrayList<Proprietario> listP = new ArrayList<>();
     static Scanner scan = new Scanner(System.in);
     static Veiculo veiculo = new Veiculo();
+    static Veiculo veiculo2 = new Veiculo();
+    static Veiculo veiculo3 = new Veiculo();
     static Proprietario proprietario = new Proprietario();
+    static Proprietario proprietario2 = new Proprietario();
+    static Proprietario proprietario3 = new Proprietario();
     public static void main(String[] args){
-       
-        proprietario.setNome("Igor");
-        proprietario.setEmpresa("Ficiticia SA");
-        veiculo.setMarca("Peugeot");
-        veiculo.setModelo("207");
-        veiculo.setAno(2013);
-        veiculo.setCor("Banco");
-        veiculo.setPlaca("aaa1234");
-
-    int op = -1;
+//Cadastro 1
+    proprietario.setNome("Igor");
+    proprietario.setEmpresa("Ficiticia SA");
+    veiculo.setMarca("Peugeot");
+    veiculo.setModelo("207");
+    veiculo.setAno(2013);
+    veiculo.setCor("Banco");
+    veiculo.setPlaca("aaa1234");
+    list.add(veiculo);
+    listP.add(proprietario);
+//Cadastro 2
+    proprietario2.setNome("fagundes");
+    proprietario2.setEmpresa("Ficiticia SB");
+    veiculo2.setMarca("Wolksvagen");
+    veiculo2.setModelo("Fusca");
+    veiculo2.setAno(1976);
+    veiculo2.setCor("Azul");
+    veiculo2.setPlaca("bbb1234");
+    list.add(veiculo2);
+    listP.add(proprietario2);
+//Cadastro 3
+    proprietario3.setNome("Pontes");
+    proprietario3.setEmpresa("Ficiticia SC");
+    veiculo3.setMarca("Fiat");
+    veiculo3.setModelo("Uno");
+    veiculo3.setAno(2009);
+    veiculo3.setCor("Prata");
+    veiculo3.setPlaca("ccc1234");
+    list.add(veiculo3);
+    listP.add(proprietario3);
+    //imprimir(veiculo, proprietario);
+    imprimirTodos();
+    /*int op = -1;
 
     while(op != 0){
         op = menu();
         if(op == 1){
-            cadastrar();
+   
         }else if(op == 2){
 
         }else if(op == 3){
 
         }else if(op == 4){
-            imprimir();
+            imprimirTodos();
         }else{
             System.out.println("||= Obrigado por utilizar meu sistema =||");
             System.out.println("||= Programa encerrado! =||");
         }
-    }
+    }*/
 
     }//main
     //menu de interacao
-    public static int menu(){
+    /*public static int menu(){
         System.out.println("||==========================||");
         System.out.println("||=  CADASTRO DE VEICULO   =||");
         System.out.println("||==========================||");
@@ -50,9 +77,9 @@ public class Principal{
         System.out.println("||==========================||");
         System.out.print("Opçao: ");
         return scan.nextInt();
-    }
+    }*/
     //metodo cadastrar
-    public static void cadastrar(){
+    /*public static void cadastrar(){
         Scanner scann = new Scanner(System.in);
         System.out.println("||=========================||");
         System.out.println("||=       CADASTRAR       =||");
@@ -97,9 +124,9 @@ public class Principal{
         list.add(veiculo);
         listP.add(proprietario);
 
-    }
+    }*/
 //metodo de impressao individual
-public static void imprimir(){
+public static ArrayList<Veiculo> imprimir(Veiculo veic, Proprietario prop){
     System.out.println("Nome do Proprietario: " + proprietario.getNome());
     System.out.println("Empresa Cadastrada:" + proprietario.getEmpresa());
     System.out.println("Modelo do Veiculo: " + veiculo.getModelo());
@@ -107,6 +134,19 @@ public static void imprimir(){
     System.out.println("Ano do Veiculo: " + veiculo.getAno());
     System.out.println("Cor prevalente do Veiculo: " + veiculo.getCor());
     System.out.println("Placa do Veiculo:" + veiculo.getPlaca());
+    return list;
     
-}  
+} 
+//metodo para imprimir todos
+public static void imprimirTodos(){
+    Veiculo veiculo = null;
+    Proprietario proprietario = null;
+        for(int i = 0;i < list.size();i++){
+            for(int j = 0;j < listP.size();j++){
+            veiculo = list.get(i);
+            proprietario = listP.get(j);
+            imprimir(veiculo, proprietario);
+            }
+    }
+} 
 }//global
