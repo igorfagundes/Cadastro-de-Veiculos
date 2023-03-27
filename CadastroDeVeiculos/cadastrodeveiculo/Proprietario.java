@@ -4,12 +4,6 @@ public class Proprietario {
     public String nome;
     private String cargo;
     public String empresa;
-//costrutor
-    public Proprietario(String nome, String cargo, String empresa) {
-        this.nome = nome;
-        this.cargo = cargo;
-        this.empresa = empresa;
-    }
 //getters e setters
     public String getNome() {
         return nome;

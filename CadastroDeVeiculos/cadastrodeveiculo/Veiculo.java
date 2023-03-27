@@ -6,14 +6,6 @@ public class Veiculo {
    public int ano;
    public String cor;
    public String placa;
-//construtor
-public Veiculo(String marca, String modelo, int ano, String cor, String placa) {
-    this.marca = marca;
-    this.modelo = modelo;
-    this.ano = ano;
-    this.cor = cor;
-    this.placa = placa;
-}
 //getters e setters
     public String getMarca() {
         return marca;

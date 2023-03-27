@@ -5,11 +5,20 @@ public class Principal{
     static ArrayList<Veiculo> list = new ArrayList<>();
     static ArrayList<Proprietario> listP = new ArrayList<>();
     static Scanner scan = new Scanner(System.in);
-    static Veiculo veiculo = new Veiculo(null, null, 0, null, null);
-    static Proprietario proprietario = new Proprietario(null, null, null);
+    static Veiculo veiculo = new Veiculo();
+    static Proprietario proprietario = new Proprietario();
     public static void main(String[] args){
+       
+        proprietario.setNome("Igor");
+        proprietario.setEmpresa("Ficiticia SA");
+        veiculo.setMarca("Peugeot");
+        veiculo.setModelo("207");
+        veiculo.setAno(2013);
+        veiculo.setCor("Banco");
+        veiculo.setPlaca("aaa1234");
+
     int op = -1;
-    
+
     while(op != 0){
         op = menu();
         if(op == 1){
