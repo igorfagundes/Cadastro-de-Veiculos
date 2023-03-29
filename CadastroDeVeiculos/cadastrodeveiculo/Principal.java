@@ -36,8 +36,9 @@ public class Principal{
     veiculo3.setCor("Prata");
     veiculo3.setPlaca("ccc1234");
     list.add(veiculo3);
-    //imprimir(veiculo, proprietario);
-    imprimirTodos();
+    //imprimir(veiculo);
+    String placa = "bbb1234";
+    buscarPorPlaca(placa);
     /*int op = -1;
 
     while(op != 0){
@@ -51,7 +52,10 @@ public class Principal{
         }else if(op == 4){
             imprimirTodos();
         }else if(op == 5){
-
+            System.out.println("Digite a placa que deseja procurar");
+            System.out.print("Opcao: ");
+            String placa = scan.nextLine();
+            buscarPorPlaca(placa);
         }else{
             System.out.println("||= Obrigado por utilizar meu sistema =||");
             System.out.println("||= Programa encerrado! =||");
@@ -140,9 +144,12 @@ public static void imprimirTodos(){
     }
 }
 //metodo para buscar por placa
-public static ArrayList<Veiculo> buscarPorPlaca(Veiculo placa){
-    
-
+public static ArrayList<Veiculo> buscarPorPlaca(String placa){
+    for(int i = 0;i < list.size();i++){
+    if(list.get(i).getPlaca().equals(placa)){
+        imprimir(list.get(i));
+    }
+}
     return list;
 } 
 }//global
