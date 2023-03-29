@@ -1,12 +1,27 @@
 package cadastrodeveiculo;
 public class Veiculo {
 //atributos
+   public String nome;
+   public String empresa;
    public String marca;
    public String modelo;
    public int ano;
    public String cor;
    public String placa;
+
 //getters e setters
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public String getEmpresa() {
+        return empresa;
+    }
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
     public String getMarca() {
         return marca;
     }
@@ -45,6 +60,4 @@ public class Veiculo {
         }
         return apto;
     }
-
-
 }
