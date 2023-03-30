@@ -5,66 +5,39 @@ public class Principal{
     static ArrayList<Veiculo> list = new ArrayList<>();
     static Scanner scan = new Scanner(System.in);
     static Veiculo veiculo = new Veiculo();
-    static Veiculo veiculo2 = new Veiculo();
-    static Veiculo veiculo3 = new Veiculo();
     public static void main(String[] args){
-//Cadastro 1
-    veiculo.setNome("Igor");
-    veiculo.setEmpresa("Ficiticia SA");
-    veiculo.setMarca("Peugeot");
-    veiculo.setModelo("207");
-    veiculo.setAno(2013);
-    veiculo.setCor("Banco");
-    veiculo.setPlaca("aaa1234");
-    list.add(veiculo);
-//Cadastro 2
-    veiculo2.setNome("fagundes");
-    veiculo2.setEmpresa("Ficiticia SB");
-    veiculo2.setMarca("Wolksvagen");
-    veiculo2.setModelo("Fusca");
-    veiculo2.setAno(1976);
-    veiculo2.setCor("Azul");
-    veiculo2.setPlaca("bbb1234");
-    list.add(veiculo2);
-    
-//Cadastro 3
-    veiculo3.setNome("Pontes");
-    veiculo3.setEmpresa("Ficiticia SC");
-    veiculo3.setMarca("Fiat");
-    veiculo3.setModelo("Uno");
-    veiculo3.setAno(2009);
-    veiculo3.setCor("Prata");
-    veiculo3.setPlaca("ccc1234");
-    list.add(veiculo3);
-    //imprimir(veiculo);
-    String placa = "bbb1234";
-    buscarPorPlaca(placa);
-    /*int op = -1;
+
+    int op = -1;
 
     while(op != 0){
         op = menu();
         if(op == 1){
-   
+            cadastrar();
         }else if(op == 2){
-
+            Scanner s = new Scanner(System.in);
+            System.out.println("Digite a placa que deseja REMOVER");
+            System.out.print("Opcao: ");
+            String placa = s.nextLine();
+            remover(placa);
         }else if(op == 3){
 
         }else if(op == 4){
             imprimirTodos();
         }else if(op == 5){
-            System.out.println("Digite a placa que deseja procurar");
+            Scanner s = new Scanner(System.in);
+            System.out.println("Digite a placa que deseja PROCURAR");
             System.out.print("Opcao: ");
-            String placa = scan.nextLine();
+            String placa = s.nextLine();
             buscarPorPlaca(placa);
         }else{
             System.out.println("||= Obrigado por utilizar meu sistema =||");
             System.out.println("||= Programa encerrado! =||");
         }
-    }*/
+    }
 
     }//main
     //menu de interacao
-    /*public static int menu(){
+    public static int menu(){
         System.out.println("||===========================||");
         System.out.println("||=   CADASTRO DE VEICULO   =||");
         System.out.println("||===========================||");
@@ -78,9 +51,9 @@ public class Principal{
         System.out.println("||===========================||");
         System.out.print("Opçao: ");
         return scan.nextInt();
-    }*/
+    }
     //metodo cadastrar
-    /*public static void cadastrar(){
+    public static void cadastrar(){
         Scanner scann = new Scanner(System.in);
         System.out.println("||=========================||");
         System.out.println("||=       CADASTRAR       =||");
@@ -123,16 +96,20 @@ public class Principal{
             veiculo.apto(false);
         }
         list.add(veiculo);
-    }*/
+    }
 //metodo de impressao individual
 public static ArrayList<Veiculo> imprimir(Veiculo veic){
-    System.out.println("Nome do Proprietario: " + veic.getNome());
-    System.out.println("Empresa Cadastrada:" + veic.getEmpresa());
-    System.out.println("Modelo do Veiculo: " + veic.getModelo());
-    System.out.println("Marca do Veiculo: " + veic.getMarca());
-    System.out.println("Ano do Veiculo: " + veic.getAno());
-    System.out.println("Cor prevalente do Veiculo: " + veic.getCor());
-    System.out.println("Placa do Veiculo:" + veic.getPlaca());
+    System.out.println("||======================||");
+    System.out.println("||= MOSTRANDO CADASTRO =||");
+    System.out.println("||======================||");
+    System.out.println("||= Nome do Proprietario: " + veic.getNome());
+    System.out.println("||= Empresa Cadastrada:" + veic.getEmpresa());
+    System.out.println("||= Modelo do Veiculo: " + veic.getModelo());
+    System.out.println("||= Marca do Veiculo: " + veic.getMarca());
+    System.out.println("||= Ano do Veiculo: " + veic.getAno());
+    System.out.println("||= Cor do Veiculo: " + veic.getCor());
+    System.out.println("||= Placa do Veiculo:" + veic.getPlaca());
+    System.out.println("||======================||");
 return list;
 } 
 //metodo para imprimir todos
@@ -152,4 +129,12 @@ public static ArrayList<Veiculo> buscarPorPlaca(String placa){
 }
     return list;
 } 
+//metodo para remover
+public static ArrayList<Veiculo> remover(String placaRemove){
+    for(int i = 0;i < list.size();i++){
+    list.remove(i);
+    System.out.println(placaRemove + " removido com sucesso!");
+    }
+    return list;
+}
 }//global
