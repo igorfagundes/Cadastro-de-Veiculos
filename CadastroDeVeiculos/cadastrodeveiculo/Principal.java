@@ -20,18 +20,18 @@ public class Principal{
             String placa = s.nextLine();
             remover(placa);
         }else if(op == 3){
-
-        }else if(op == 4){
             imprimirTodos();
-        }else if(op == 5){
+        }else if(op == 4){
             Scanner s = new Scanner(System.in);
             System.out.println("Digite a placa que deseja PROCURAR");
             System.out.print("Opcao: ");
             String placa = s.nextLine();
             buscarPorPlaca(placa);
         }else{
+            System.out.println("||=====================================||");
             System.out.println("||= Obrigado por utilizar meu sistema =||");
-            System.out.println("||= Programa encerrado! =||");
+            System.out.println("||= Programa encerrado!               =||");
+            System.out.println("||=====================================||");
         }
     }
 
@@ -43,9 +43,8 @@ public class Principal{
         System.out.println("||===========================||");
         System.out.println("||= [1] CADASTRAR VEÍCULO   =||");
         System.out.println("||= [2] REMOVER VEÍCULO     =||");
-        System.out.println("||= [3] ALTERAR VEÍCULO     =||");
-        System.out.println("||= [4] MOSTRAR CADASTROS   =||");
-        System.out.println("||= [5] BUSCAR PLACA        =||");
+        System.out.println("||= [3] MOSTRAR CADASTROS   =||");
+        System.out.println("||= [4] BUSCAR PLACA        =||");
         System.out.println("||===========================||");
         System.out.println("||= [0] SAIR                =||");
         System.out.println("||===========================||");
